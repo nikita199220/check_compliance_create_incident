@@ -1,6 +1,6 @@
 ---
 # vars file for check_config_update_servicenow
 username: admin
-password:
+password: 
 instance: dev92253
 error_field: Unreachable
