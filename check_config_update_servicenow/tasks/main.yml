@@ -1,0 +1,38 @@
+- name: Check that the somefile.conf exists
+  stat:
+    path: /etc/test
+  register: stat_result
+
+- name: Status of file
+  debug:
+    msg: "File is not present"
+  when: stat_result.stat.exists == False
+
+- name: look at changeFlag
+  debug:
+    var: stat_result.stat.exists
+
+- name: SERVICENOW IF CHANGED
+  block:
+    - name: CREATE AN INCIDENT
+      snow_record:
+        username: "{{ username }}"
+        password: "{{ password }}"
+        instance: "{{ instance }}"
+        state: present
+        table: incident
+        data:
+          short_description: "Unwanted packag on server"
+          severity: 3
+          priority: 2
+          u_string_6: "{{ error_field }}"
+          state: present
+          assigned_to: nikita
+          Caller: test
+      register: snow_var
+      delegate_to: localhost
+
+    - name: DEBUG SNOW_VAR
+      debug:
+        var: snow_var.record.number
+  when: stat_result.stat.exists == True
