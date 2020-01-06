@@ -1,6 +1,6 @@
 - name: Check that the somefile.conf exists
   stat:
-    path: /Users/SQ77ER/Desktop/test
+    path: /test/test
   register: stat_result
 
 - name: Status of file
