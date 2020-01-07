@@ -1,6 +1,6 @@
 - name: Check that the somefile.conf exists
   stat:
-    path: {{ test_path }}
+    path: "{{ test_path }}"
   register: stat_result
 
 - name: Status of file
