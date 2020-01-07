@@ -5,4 +5,4 @@
  # connection: 
   gather_facts: no
   roles:
-    - check_config_update_servicenowpip
+    - check_config_update_servicenow
