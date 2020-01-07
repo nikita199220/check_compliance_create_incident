@@ -3,4 +3,5 @@
 username: admin
 password: Nikita@123
 instance: dev92253
+test_path: /test
 error_field: Unreachable
