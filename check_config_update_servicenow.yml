@@ -2,7 +2,7 @@
 - name: Create ticket with notes
   hosts: all
   become: yes
-# connection: localhost
+ # connection: 
   gather_facts: no
   roles:
-    - check_config_update_servicenow
+    - check_config_update_servicenowpip
