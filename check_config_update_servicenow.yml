@@ -4,6 +4,5 @@
   become: yes
 # connection: localhost
   gather_facts: no
-  ansible_python_interpreter: /usr/bin/python3
   roles:
     - check_config_update_servicenow
