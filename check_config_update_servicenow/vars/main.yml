@@ -2,5 +2,5 @@
 # vars file for check_config_update_servicenow
 username: admin
 instance: dev92253
-test_path: /Users/SQ77ER/Desktop/nikita/servicenow_ansible/check_config_update_servicenow/test
+test_path: /test
 error_field: Unreachable
